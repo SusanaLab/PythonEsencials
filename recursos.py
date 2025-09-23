@@ -15,3 +15,4 @@ class InicioDeSesion(Resource):
 class RegistroDeUsuario(Resource):
     def get(self):
         return make_response(render_template("registro.html"))
+
