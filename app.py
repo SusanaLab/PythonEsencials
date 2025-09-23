@@ -1,11 +1,11 @@
-# run.py
-from app import create_app
+from flask import Flask
+from flask_restful import Resource, Api
+from routes import RutasApi
 
-app = create_app()
+app = Flask(__name__)
+api = Api(app)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+routes = RutasApi()
+routes.inicializar_rutas(api)
 
-if __name__ == "__main__":
-    app.run(debug=True, port=8000)
-""" 192.168.0.112  """
+app.run(debug=True, port=8000)
