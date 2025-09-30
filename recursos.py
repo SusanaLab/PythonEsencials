@@ -21,9 +21,21 @@ class InicioDeSesion(Resource):
 
         print(f"Correo:{correo}")
         print(f"Password:{password}")
+
         return "procesando incion de sesion.."
 
 
+# 4waxpsEchVKiKwkp
 class RegistroDeUsuario(Resource):
     def get(self):
         return make_response(render_template("registro.html"))
+
+    def post(self):
+        print("Processando")
+
+        nombre = request.form.get("nombre")
+        correo = request.form.get("correo")
+        password = request.form.get("password")
+        telefono = request.form.get("telefono")
+
+        return "Procesando registro de usuario"
